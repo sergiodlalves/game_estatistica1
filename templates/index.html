@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Estatística em Cena - Início{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+  <div class="jumbotron my-4">
+    <h1 class="display-4">Estatística em Cena</h1>
+    <p class="lead">Um jogo educativo sobre estatística com temática de cinema e música.</p>
+    <hr class="my-4">
+    <p>Aprenda estatística de forma divertida enquanto explora o mundo do cinema e da música!</p>
+    <div class="mt-4">
+
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h2>Menu Principal</h2>
+        </div>
+        <div class="card-body">
+          {% if user.is_authenticated %}
+            <div class="alert alert-success">
+              <i class="fas fa-user"></i> Bem-vindo(a), {{ user.username }}!
+            </div>
+            <div class="d-grid gap-3">
+              <a href="{% url 'tabuleiro' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-play-circle"></i> Iniciar Jogo
+              </a>
+              <a href="{% url 'estatisticas_jogador' %}" class="btn btn-info btn-lg">
+                <i class="fas fa-chart-bar"></i> Minhas Estatísticas
+              </a>
+              <a href="{% url 'ranking' %}" class="btn btn-warning btn-lg">
+                <i class="fas fa-trophy"></i> Ranking
+              </a>
+              <a href="{% url 'tutorial' %}" class="btn btn-secondary btn-lg">
+                <i class="fas fa-question-circle"></i> Tutorial
+              </a>
+              <a href="{% url 'account_logout' %}" class="btn btn-outline-danger">
+                <i class="fas fa-sign-out-alt"></i> Sair
+              </a>
+            </div>
+          {% else %}
+            <div class="alert alert-info">
+              <i class="fas fa-info-circle"></i> Faça login para jogar!
+            </div>
+            <div class="d-grid gap-3">
+              <a href="{% url 'account_login' %}" class="btn btn-success btn-lg">
+                <i class="fas fa-sign-in-alt"></i> Login
+              </a>
+              <a href="{% url 'account_signup' %}" class="btn btn-outline-primary btn-lg">
+                <i class="fas fa-user-plus"></i> Registrar
+              </a>
+              <a href="{% url 'ranking' %}" class="btn btn-warning">
+                <i class="fas fa-trophy"></i> Ver Ranking
+              </a>
+              <a href="{% url 'tutorial' %}" class="btn btn-secondary">
+                <i class="fas fa-question-circle"></i> Tutorial
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-chart-pie fa-3x text-primary mb-3"></i>
+          <h3>Estatística Aplicada</h3>
+          <p>Aprenda conceitos estatísticos importantes enquanto se diverte com o tema de cinema e música.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-film fa-3x text-danger mb-3"></i>
+          <h3>Temática de Cinema</h3>
+          <p>Responda perguntas sobre estatística em um ambiente inspirado nos maiores clássicos do cinema.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-music fa-3x text-success mb-3"></i>
+          <h3>Universo Musical</h3>
+          <p>Explore o mundo da música enquanto aprimora seus conhecimentos estatísticos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mt-5 mb-4">
+    <p class="text-muted">© 2023 Estatística em Cena - Um projeto educativo</p>
+  </div>
+</div>
+{% endblock %}

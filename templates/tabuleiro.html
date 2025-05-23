@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabuleiro Caminho da Fama</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Adicione o novo arquivo CSS específico para o tabuleiro -->
+    <link rel="stylesheet" href="{% static 'css/tabuleiro.css' %}">
+
+
+    <!-- React e Babel CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+
+<!-- No início do body do template tabuleiro.html -->
+<input type="hidden" id="jogo_id" value="{{ jogo_id }}">
+<input type="hidden" id="jogador_nome" value="{{ jogador_nome }}">
+{% csrf_token %}
+
+    <!-- Status do jogo para depuração -->
+    <div id="debug-info" style="display: none; padding: 10px; margin-bottom: 10px; background: #f8f8f8; border: 1px solid #ddd; color: #333; font-size: 12px;">
+      Jogo ID: {{ jogo_id }}<br>
+      Jogador: {{ jogador_nome }}<br>
+      URL: {{ request.path }}
+    </div>
+
+    <div id="botao-cinematografico-root"></div>
+    
+    <!-- Definir a URL do ranking -->
+    <script>
+        window.rankingUrl = "{% url 'ranking' %}";
+    </script>
+    
+<!-- React do tabuleiro (em arquivo separado) -->
+<script
+    type="text/babel"
+    src="{% static 'js/src/Tabuleiro.jsx' %}">
+</script>
+</body>
+</html>

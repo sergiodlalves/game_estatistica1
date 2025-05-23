@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  .signup-cinema-container {
+    max-width: 420px;
+    margin: 60px auto 0 auto;
+    background: #222;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #0008, 0 1.5px 0 #FFD700 inset;
+    padding: 36px 32px 28px 32px;
+    border: 2px solid #FFD700;
+    position: relative;
+  }
+  .signup-cinema-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .signup-cinema-header .icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .signup-cinema-title {
+    color: #FFD700;
+    font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 1px 1px 8px #000a;
+    margin-bottom: 0;
+  }
+  .signup-cinema-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+  .signup-cinema-form div {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .signup-cinema-form label {
+    color: #FFD700;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    font-size: 1rem;
+  }
+  .signup-cinema-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #FFD700;
+    background: #181818;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    margin-bottom: 0;
+  }
+  .signup-cinema-form input:focus {
+    border: 2px solid #FFD700;
+    background: #232526;
+  }
+  .signup-cinema-form button {
+    width: 100%;
+    background: linear-gradient(90deg, #FFD700 60%, #bfa100 100%);
+    color: #222;
+    font-weight: bold;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px #FFD70044;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .signup-cinema-form button:hover {
+    background: linear-gradient(90deg, #bfa100 0%, #FFD700 100%);
+    color: #000;
+  }
+  .signup-cinema-links {
+    text-align: center;
+    margin-top: 18px;
+  }
+  .signup-cinema-links a {
+    color: #FFD700;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .signup-cinema-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .film-border {
+    position: absolute;
+    left: -18px; right: -18px; top: -18px; bottom: -18px;
+    border: 3px dashed #FFD70055;
+    border-radius: 22px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .signup-cinema-form .errorlist {
+    color: #FFD700;
+    margin: 0 0 6px 0;
+    font-size: 0.98rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>
+
+<div class="signup-cinema-container">
+  <div class="film-border"></div>
+  <div class="signup-cinema-header">
+    <span class="icon">🎬</span>
+    <h2 class="signup-cinema-title">Caminho da Fama</h2>
+    <div class="signup-cinema-subtitle">Crie sua conta para entrar no jogo!</div>
+  </div>
+  <form method="post" action="{% url 'account_signup' %}" class="signup-cinema-form">
+    {% csrf_token %}
+    <div>
+      {{ form.username.label_tag }}
+      {{ form.username }}
+      {% if form.username.errors %}
+        <ul class="errorlist">{{ form.username.errors }}</ul>
+      {% endif %}
+    </div>
+    <div>
+      {{ form.email.label_tag }}
+      {{ form.email }}
+      {% if form.email.errors %}
+        <ul class="errorlist">{{ form.email.errors }}</ul>
+      {% endif %}
+    </div>
+    <div>
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+      {% if form.password1.errors %}
+        <ul class="errorlist">{{ form.password1.errors }}</ul>
+      {% endif %}
+    </div>
+    <div>
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+      {% if form.password2.errors %}
+        <ul class="errorlist">{{ form.password2.errors }}</ul>
+      {% endif %}
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form>
+  <div class="signup-cinema-links">
+    <a href="{% url 'account_login' %}">Já tenho conta</a>
+  </div>
+</div>
+{% endblock %}

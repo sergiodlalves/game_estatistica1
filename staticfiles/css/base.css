@@ -1,0 +1,322 @@
+/* Base styles from the tabuleiro design */
+body {
+    background: #f5e6c8;
+    background-image: url('../img/rolo_de_filme2.png');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estrutura geral de containers */
+.content {
+    padding-top: 30px;
+    min-height: calc(100vh - 120px);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.card, .jumbotron {
+    background-image: url('../img/rolo_de_filme2.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #c9a14a;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #000a, 0 0 0 2px #c9a14a inset;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.card::before, .jumbotron::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 24, 22, 0.6);
+    z-index: 0;
+}
+
+.card-header, .card-body, .card-footer,
+.jumbotron * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Cores e estilos de texto */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffe9a0;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #000, 0 1px 0 #c9a14a;
+    letter-spacing: 1px;
+}
+
+.text-primary {
+    color: #ffe066 !important;
+}
+
+.text-success {
+    color: #00ff70 !important;
+}
+
+.text-danger {
+    color: #ff1744 !important;
+}
+
+.text-warning {
+    color: #ffe066 !important;
+}
+
+/* Navbar personalizada */
+.navbar {
+    background: linear-gradient(145deg, #3a2c1a 60%, #6b4e23 100%) !important;
+    border-bottom: 2px solid #c9a14a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    color: #ffe066 !important;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #000;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffe9a0;
+    font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fffbe6;
+}
+
+.dropdown-menu {
+    background: #3a2c1a;
+    border: 1px solid #c9a14a;
+}
+
+.dropdown-item {
+    color: #ffe9a0;
+}
+
+.dropdown-item:hover {
+    background: #6b4e23;
+    color: #fffbe6;
+}
+
+/* Botões estilo cinema */
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info {
+    border: 2px solid #c9a14a;
+    border-radius: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 0 1px #c9a14a inset;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0.5em 1.1em 0.6em 1.1em;
+    transition: all 0.2s;
+    background: linear-gradient(145deg, #3a2c1a 60%, #6b4e23 100%);
+    color: #ffe9a0;
+}
+
+.btn:hover, .btn:focus {
+    background: linear-gradient(145deg, #6b4e23 60%, #3a2c1a 100%);
+    color: #fffbe6 !important;
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 0 2px #ffe9a0 inset;
+}
+
+.btn-primary {
+    background: linear-gradient(145deg, #3a2c1a 60%, #6b4e23 100%);
+}
+
+.btn-success {
+    background: linear-gradient(145deg, #2e3a1a 60%, #4a6b23 100%);
+}
+
+.btn-warning {
+    background: linear-gradient(145deg, #3a2e1a 60%, #6b5723 100%);
+}
+
+.btn-danger {
+    background: linear-gradient(145deg, #3a1a1a 60%, #6b2323 100%);
+}
+
+.btn-info {
+    background: linear-gradient(145deg, #1a2e3a 60%, #235a6b 100%);
+}
+
+.btn-lg {
+    font-size: 1.2rem;
+    padding: 0.6em 1.5em;
+}
+
+.btn-sm {
+    font-size: 0.9rem;
+    padding: 0.4em 0.9em;
+}
+
+/* Cards e alertas */
+.card-header {
+    background: linear-gradient(145deg, #3a2c1a 60%, #6b4e23 100%) !important;
+    color: #ffe066 !important;
+    border-bottom: 2px solid #c9a14a;
+}
+
+.alert {
+    border: 1px solid #c9a14a;
+    border-radius: 13px;
+    position: relative;
+}
+
+.alert::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 24, 22, 0.2);
+    z-index: -1;
+    border-radius: 13px;
+}
+
+/* Efeitos especiais */
+.estrela-cinema {
+    font-size: 1.1rem;
+    color: #ffe066;
+    filter: drop-shadow(0 0 4px #fffbe6);
+    margin-left: 0.4em;
+    vertical-align: middle;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(145deg, #3a2c1a 60%, #6b4e23 100%) !important;
+    border-top: 2px solid #c9a14a;
+    color: #ffe9a0 !important;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 500;
+}
+
+/* Tabelas */
+.table {
+    color: #ffe9a0;
+    border-color: #c9a14a;
+}
+
+.table th {
+    border-color: #c9a14a;
+    background: rgba(58, 44, 26, 0.7);
+}
+
+.table td {
+    border-color: #c9a14a;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(58, 44, 26, 0.3);
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(58, 44, 26, 0.5);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(107, 78, 35, 0.4);
+}
+
+/* Badges */
+.badge {
+    border-radius: 13px;
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+}
+
+.bg-primary {
+    background-color: #3a2c1a !important;
+    border: 1px solid #c9a14a;
+}
+
+.bg-success {
+    background-color: #2e3a1a !important;
+    border: 1px solid #c9a14a;
+}
+
+.bg-warning {
+    background-color: #3a2e1a !important;
+    border: 1px solid #c9a14a;
+}
+
+.bg-danger {
+    background-color: #3a1a1a !important;
+    border: 1px solid #c9a14a;
+}
+
+.bg-info {
+    background-color: #1a2e3a !important;
+    border: 1px solid #c9a14a;
+}
+
+.bg-light {
+    background-color: rgba(58, 44, 26, 0.3) !important;
+    color: #ffe9a0;
+    border: 1px solid #c9a14a;
+}
+
+.alert-primary, .alert-secondary, .alert-success, 
+.alert-danger, .alert-warning, .alert-info {
+    color: #ffe9a0;
+    border: 1px solid #c9a14a;
+    background-color: rgba(58, 44, 26, 0.5);
+}
+
+/* Componentes específicos */
+.jumbotron {
+    background-color: transparent;
+    color: #ffe9a0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 18px;
+}
+
+.display-4 {
+    color: #ffe066;
+    text-shadow: 0 2px 8px #000, 0 1px 0 #c9a14a;
+}
+
+.lead {
+    color: #ffe9a0;
+    font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .btn {
+        padding: 0.4em 0.9em;
+        font-size: 0.95rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,458 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tutorial - Estatística em Cena{% endblock %}
+
+{% block content %}
+<div class="container tutorial-container">
+  <div class="row tutorial-header">
+    <div class="col-12 text-center">
+      <h1 class="tutorial-title">Tutorial - Caminho da Fama</h1>
+      <p class="tutorial-subtitle">Aprenda como jogar e conquiste os melhores resultados!</p>
+    </div>
+  </div>
+
+  <div class="row tutorial-content">
+    <div class="col-md-8 offset-md-2">
+      <!-- Seção: Introdução -->
+      <div class="tutorial-section">
+        <div class="section-icon">📚</div>
+        <h2 class="section-title">Introdução ao Jogo</h2>
+        <p>
+          <strong>Caminho da Fama</strong> é um jogo educativo que testa seus conhecimentos em estatística 
+          de forma divertida e desafiadora. Avance pelo tabuleiro, responda perguntas e acumule pontos para 
+          se tornar o melhor jogador!
+        </p>
+      </div>
+
+      <!-- Seção: Objetivo do Jogo -->
+      <div class="tutorial-section">
+        <div class="section-icon">🏆</div>
+        <h2 class="section-title">Objetivo do Jogo</h2>
+        <p>
+          O objetivo principal é completar o percurso do tabuleiro, chegando à casa de <strong>Chegada</strong>, 
+          acumulando a maior pontuação possível. Sua pontuação é obtida respondendo corretamente às perguntas 
+          sobre estatística que aparecem durante o jogo.
+        </p>
+      </div>
+
+      <!-- Seção: Como Jogar -->
+      <div class="tutorial-section">
+        <div class="section-icon">🎲</div>
+        <h2 class="section-title">Como Jogar</h2>
+        <ol class="tutorial-steps">
+          <li>
+            <strong>Iniciar o jogo:</strong> Clique no botão "Iniciar Jogo" na página inicial.
+          </li>
+          <li>
+            <strong>Lançar o dado:</strong> Clique no botão "Tirar a Sorte" para lançar o dado e 
+            avançar seu personagem no tabuleiro.
+          </li>
+          <li>
+            <strong>Responder perguntas:</strong> Quando cair em uma casa de zona temática, você 
+            deverá responder a uma pergunta sobre aquele tema específico.
+          </li>
+          <li>
+            <strong>Acumular pontos:</strong> Respostas corretas somam pontos à sua pontuação. 
+            Quanto mais difícil a pergunta, mais pontos você ganha!
+          </li>
+          <li>
+            <strong>Chegar ao final:</strong> Continue avançando até chegar à casa de Chegada para 
+            finalizar o jogo e registrar sua pontuação no ranking.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Seção: Casas Especiais do Tabuleiro -->
+      <div class="tutorial-section">
+        <div class="section-icon">🗺️</div>
+        <h2 class="section-title">Casas Especiais do Tabuleiro</h2>
+        
+        <div class="casa-explicacao">
+          <div class="casa-demo saida"></div>
+          <div class="casa-info">
+            <h3>Casa de Saída</h3>
+            <p>Onde todos começam sua jornada no tabuleiro.</p>
+          </div>
+        </div>
+
+        <div class="casa-explicacao">
+          <div class="casa-demo zona"></div>
+          <div class="casa-info">
+            <h3>Casas de Zona</h3>
+            <p>São as casas coloridas que representam os diferentes temas de estatística. Ao cair nelas, você deverá responder uma pergunta sobre esse tema específico.</p>
+            <p>O jogo possui 5 zonas temáticas:</p>
+            <ul>
+              <li><span class="tema-estatistica">Estatística Básica</span> - Conceitos fundamentais</li>
+              <li><span class="tema-tendencia">Tendência Central</span> - Média, mediana e moda</li>
+              <li><span class="tema-probabilidade">Probabilidade</span> - Cálculos e conceitos de probabilidade</li>
+              <li><span class="tema-grafica">Dispersão</span> - É a medida de quanto os dados se espalham em torno de sua tendência central</li>
+              <li><span class="tema-correlacao">Correlação</span> - Relações entre variáveis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="casa-explicacao">
+          <div class="casa-demo bonus"></div>
+          <div class="casa-info">
+            <h3>Casas de Bônus</h3>
+            <p>Ao cair nestas casas, você ganha automaticamente 50 pontos extras!</p>
+          </div>
+        </div>
+
+        <div class="casa-explicacao">
+          <div class="casa-demo penalidade"></div>
+          <div class="casa-info">
+            <h3>Casas de Penalidade</h3>
+            <p>Atenção! Nestas casas você perde 30 pontos da sua pontuação atual.</p>
+          </div>
+        </div>
+
+        <div class="casa-explicacao">
+          <div class="casa-demo chegada"></div>
+          <div class="casa-info">
+            <h3>Casa de Chegada</h3>
+            <p>O destino final! Ao chegar aqui, o jogo termina e sua pontuação é registrada no ranking.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção: Perguntas e Respostas -->
+      <div class="tutorial-section">
+        <div class="section-icon">❓</div>
+        <h2 class="section-title">Sistema de Perguntas</h2>
+        
+        <h3>Respondendo perguntas</h3>
+        <p>
+          Ao cair em uma casa de zona, você verá uma pergunta e várias opções de resposta. 
+          Selecione a que você acredita ser correta e clique em "Responder".
+        </p>
+
+        <div class="pergunta-exemplo">
+          <div class="pergunta-header">Exemplo de Pergunta</div>
+          <div class="pergunta-corpo">
+            <p><strong>Qual das seguintes medidas NÃO é uma medida de tendência central?</strong></p>
+            <div class="opcoes-resposta">
+              <div class="opcao">○ Média</div>
+              <div class="opcao">○ Mediana</div>
+              <div class="opcao selecionada">● Desvio padrão</div>
+              <div class="opcao">○ Moda</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Dicas</h3>
+        <p>
+          Se estiver com dificuldade, você pode usar uma dica clicando no botão "Ver Dica". 
+          Porém, atenção: usar uma dica reduz em 30 pontos o valor da pergunta!
+        </p>
+
+        <h3>Pontuação</h3>
+        <ul>
+          <li>Cada resposta correta vale entre 50 e 100 pontos, dependendo da dificuldade.</li>
+          <li>Usar uma dica reduz a pontuação da pergunta em 30 pontos.</li>
+          <li>Respostas incorretas resultam em uma penalidade de 20 pontos.</li>
+          <li>Casas de bônus adicionam 50 pontos.</li>
+          <li>Casas de penalidade subtraem 30 pontos.</li>
+        </ul>
+      </div>
+
+      <!-- Seção: Dicas de Estratégia -->
+      <div class="tutorial-section">
+        <div class="section-icon">💡</div>
+        <h2 class="section-title">Dicas de Estratégia</h2>
+        <ul class="estrategia-list">
+          <li>Estude os conceitos básicos de estatística antes de jogar para aumentar suas chances.</li>
+          <li>Use as dicas apenas quando realmente necessário, pois elas custam pontos valiosos.</li>
+          <li>Preste atenção nas explicações após responder as perguntas – elas podem ajudar nas próximas rodadas!</li>
+          <li>Tente memorizar as respostas para perguntas que você errou, caso elas apareçam novamente.</li>
+        </ul>
+      </div>
+
+      <!-- Botões -->
+      <div class="tutorial-actions">
+        <a href="{% url 'index' %}" class="btn btn-secondary tutorial-btn">Voltar ao Menu</a>
+        <a href="{% url 'tabuleiro' %}" class="btn btn-primary tutorial-btn">Iniciar Jogo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Estilos específicos para o tutorial */
+  .tutorial-container {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .tutorial-header {
+    margin-bottom: 40px;
+  }
+
+  .tutorial-title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .tutorial-subtitle {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+  }
+
+  .tutorial-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    position: relative;
+    border-left: 5px solid #f1c40f;
+  }
+
+  .section-icon {
+    font-size: 30px;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #f1c40f;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  .section-title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 60px;
+  }
+
+  .tutorial-steps li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .casa-explicacao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .casa-explicacao:hover {
+    transform: translateX(5px);
+    background-color: #f5f5f5;
+  }
+
+  .casa-demo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+
+  .saida {
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+    position: relative;
+  }
+  
+  .saida:after {
+    content: "0";
+    color: white;
+    font-size: 22px;
+  }
+
+  .zona {
+    background: linear-gradient(145deg, #2ecc71, #27ae60);
+    position: relative;
+  }
+  
+  .zona:after {
+    content: "3";
+    color: white;
+    font-size: 22px;
+  }
+
+  .bonus {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+    position: relative;
+  }
+  
+  .bonus:after {
+    content: "6";
+    color: white;
+    font-size: 22px;
+  }
+
+  .penalidade {
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+    position: relative;
+  }
+  
+  .penalidade:after {
+    content: "9";
+    color: white;
+    font-size: 22px;
+  }
+
+  .chegada {
+    background: linear-gradient(145deg, #9b59b6, #8e44ad);
+    position: relative;
+  }
+  
+  .chegada:after {
+    content: "21";
+    color: white;
+    font-size: 22px;
+  }
+
+  .casa-info h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+  }
+
+  .pergunta-exemplo {
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  .pergunta-header {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .pergunta-corpo {
+    background: #f8f9fa;
+    padding: 20px;
+  }
+
+  .opcoes-resposta {
+    margin-top: 15px;
+  }
+
+  .opcao {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+  }
+
+  .opcao:hover {
+    background-color: #f1f1f1;
+    transform: translateX(5px);
+  }
+
+  .opcao.selecionada {
+    background-color: rgba(46, 204, 113, 0.2);
+    border-color: #2ecc71;
+    border-left: 4px solid #2ecc71;
+  }
+
+  .estrategia-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .tema-estatistica {
+    color: #2ecc71;
+    font-weight: bold;
+  }
+
+  .tema-tendencia {
+    color: #9b59b6;
+    font-weight: bold;
+  }
+
+  .tema-probabilidade {
+    color: #f1c40f;
+    font-weight: bold;
+  }
+
+  .tema-grafica {
+    color: #3498db;
+    font-weight: bold;
+  }
+
+  .tema-correlacao {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+
+  .tutorial-actions {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .tutorial-btn {
+    padding: 12px 30px;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .tutorial-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 768px) {
+    .casa-explicacao {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .casa-demo {
+      margin-bottom: 15px;
+    }
+    
+    .tutorial-title {
+      font-size: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      padding-left: 50px;
+    }
+    
+    .tutorial-btn {
+      display: block;
+      margin: 10px auto;
+      width: 80%;
+    }
+  }
+</style>
+{% endblock %}

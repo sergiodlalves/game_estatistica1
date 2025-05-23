@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  .logout-cinema-container {
+    max-width: 400px;
+    margin: 80px auto 0 auto;
+    background: #222;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #0008, 0 1.5px 0 #FFD700 inset;
+    padding: 36px 32px 28px 32px;
+    border: 2px solid #FFD700;
+    position: relative;
+    text-align: center;
+  }
+  .logout-cinema-header .icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .logout-cinema-title {
+    color: #FFD700;
+    font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 1px 1px 8px #000a;
+    margin-bottom: 0;
+  }
+  .logout-cinema-message {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 18px 0 24px 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+  .logout-cinema-form button {
+    width: 100%;
+    background: linear-gradient(90deg, #FFD700 60%, #bfa100 100%);
+    color: #222;
+    font-weight: bold;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px #FFD70044;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .logout-cinema-form button:hover {
+    background: linear-gradient(90deg, #bfa100 0%, #FFD700 100%);
+    color: #000;
+  }
+  .film-border {
+    position: absolute;
+    left: -18px; right: -18px; top: -18px; bottom: -18px;
+    border: 3px dashed #FFD70055;
+    border-radius: 22px;
+    pointer-events: none;
+    z-index: 0;
+  }
+</style>
+
+<div class="logout-cinema-container">
+  <div class="film-border"></div>
+  <div class="logout-cinema-header">
+    <span class="icon">🎬</span>
+    <h2 class="logout-cinema-title">Caminho da Fama</h2>
+  </div>
+  <div class="logout-cinema-message">
+    Tem certeza que deseja sair?<br>
+    Esperamos ver você novamente para mais desafios estatísticos!
+  </div>
+  <form method="post" action="{% url 'account_logout' %}" class="logout-cinema-form">
+    {% csrf_token %}
+    <button type="submit">Sair</button>
+  </form>
+</div>
+{% endblock %}
