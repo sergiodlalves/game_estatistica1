@@ -93,6 +93,7 @@ WSGI_APPLICATION = 'game_estatistica.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
 # Sobrescreve com a URL do banco de dados do Railway em produção
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
