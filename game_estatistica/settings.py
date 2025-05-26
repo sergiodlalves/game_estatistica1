@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1',
-    'https://gameestatistica1-production.up.railway.app'
+    'https://gameestatistica1-production-2589.up.railway.app'
 ]
 
 # Application definition
